@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nước sen Hậu Giang 500ml - Cocoon</title>
+<style>
+  :root{
+    --cream:#F7F4EE;
+    --black:#1A1A1A;
+    --gold:#B89255;
+    --gray:#6B6B66;
+    --line:#E3DFD5;
+    --pink:#E8A993;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family: Georgia, 'Times New Roman', serif;
+    background:#fff;
+    color:var(--black);
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* Top bar */
+  .topbar{
+    background:var(--black);
+    color:#fff;
+    text-align:center;
+    font-size:13px;
+    padding:10px;
+    letter-spacing:.3px;
+  }
+  .topbar span{margin-left:6px;color:var(--gold);}
+
+  /* Nav */
+  .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 60px;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  .nav-left, .nav-right{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    font-size:14px;
+  }
+  .nav-left a, .nav-right a{
+    color:#3a3a36;
+  }
+  .logo{
+    text-align:center;
+    font-family: Georgia, serif;
+  }
+  .logo .brand{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:2px;
+    color:var(--black);
+  }
+  .logo .sub{
+    font-size:9px;
+    letter-spacing:3px;
+    color:var(--gold);
+    display:block;
+    margin-top:-4px;
+  }
+  .search-icon{font-size:16px;}
+
+  /* Main layout */
+  .product-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    max-width:1500px;
+    margin:0 auto;
+    padding:50px 60px;
+    gap:60px;
+  }
+  .gallery{
+    flex:1 1 500px;
+    position:relative;
+    background:#EFEAE2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:600px;
+    border-radius:2px;
+  }
+  .gallery img{
+    max-width:80%;
+    max-height:720px;
+    object-fit:contain;
+    border-radius: 30px;
+  }
+  .gallery .arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:22px;
+    color:#999;
+    cursor:pointer;
+    background:none;
+    border:none;
+  }
+  .gallery .arrow.left{left:18px;}
+  .gallery .arrow.right{right:18px;}
+
+  .info{
+    flex:1 1 460px;
+    max-width:560px;
+    position:relative;
+  }
+  .badge-tested{
+    position:absolute;
+    top:0;
+    right:0;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:8px;
+    color:var(--gold);
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing:1px;
+  }
+
+  .breadcrumb{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:13px;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .breadcrumb .sep{color:#bbb;margin:0 6px;}
+
+  h1{
+    font-size:34px;
+    font-weight:400;
+    margin-bottom:14px;
+    line-height:1.2;
+  }
+  .price{
+    font-size:20px;
+    margin-bottom:22px;
+  }
+  .desc{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:15px;
+    line-height:1.7;
+    color:#333;
+    margin-bottom:26px;
+  }
+
+  .divider{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:22px 0;
+  }
+
+  .tags{
+    display:flex;
+    gap:34px;
+    flex-wrap:wrap;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:13px;
+  }
+  .tag{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .tag .icon{
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    border:1px solid var(--black);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:700;
+  }
+
+  .section-label{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:13px;
+    color:#888;
+    margin-bottom:8px;
+  }
+  .section-value{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:15px;
+    color:var(--black);
+  }
+
+  .cert-row{
+    display:flex;
+    gap:36px;
+    align-items:center;
+    margin:26px 0;
+  }
+  .cert{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:8px;
+    text-align:center;
+    font-weight:700;
+    border:1px solid #ddd;
+  }
+  .cert.cruelty{color:#1d6b5f;}
+  .cert.vegan{color:#1d6b5f;border-color:#1d6b5f;}
+  .cert.animal{color:#c0457a;border-color:#c0457a;}
+
+  .add-cart{
+    width:100%;
+    background:var(--black);
+    color:#fff;
+    border:none;
+    padding:20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:14px;
+    letter-spacing:1px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-left:28px;
+    padding-right:28px;
+    cursor:pointer;
+    margin-top:10px;
+  }
+  .add-cart:hover{background:#000;}
+
+  .share-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:26px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:13px;
+    color:#555;
+  }
+  .share-icons{
+    display:flex;
+    gap:14px;
+    margin-left:10px;
+  }
+  .write-review{color:var(--black);text-decoration:underline;}
+
+  .contact-float{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--gold);
+    color:#fff;
+    padding:12px 22px;
+    border-radius:30px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size:13px;
+    box-shadow:0 4px 14px rgba(0,0,0,.2);
+  }
+
+  @media(max-width:900px){
+    .navbar{padding:14px 20px;}
+    .nav-left, .nav-right{display:none;}
+    .product-wrap{padding:24px 20px;flex-direction:column;}
+    h1{font-size:26px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    Tận hưởng giao hàng miễn phí toàn quốc với hoá đơn từ 99.000 đ <span>+</span>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="search-icon">🔍</span>
+      <a href="#">Sản phẩm</a>
+      <a href="#">Khuyến mãi</a>
+      <a href="#">Cocoon</a>
+      <a href="#">Bài viết</a>
+    </div>
+    <div class="logo">
+      <div class="brand">cocoon</div>
+      <span class="sub">ORIGINAL VIETNAM</span>
+    </div>
+    <div class="nav-right">
+      <a href="#">Đăng nhập</a>
+      <a href="#">Liên hệ</a>
+      <a href="#">Giỏ hàng</a>
+      <a href="#">EN</a>
+    </div>
+  </nav>
+
+  <div class="product-wrap">
+
+    <div class="gallery">
+      <button class="arrow left">&#10094;</button>
+      <img src="pic1.jpg" alt="Nước sen Hậu Giang 500ml" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22500%22><rect width=%22300%22 height=%22500%22 fill=%22%23F0D9CC%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2218%22 text-anchor=%22middle%22 fill=%22%23333%22>Product Image</text></svg>'">
+      <button class="arrow right">&#10095;</button>
+    </div>
+
+    <div class="info">
+      <div class="badge-tested">DERMA<br>TESTED</div>
+
+      <div class="breadcrumb">
+        Chăm Sóc Da <span class="sep">·</span> Nước Cân Bằng
+      </div>
+
+      <h1>Nước sen Hậu Giang 500ml</h1>
+      <div class="price">418.000 đ</div>
+
+      <p class="desc">
+        Khai thác sức mạnh từ những đoá sen tinh khiết từ vùng đất Hậu Giang kết hợp cùng các hoạt chất khoa học tiên tiến gồm Madecassoside, vitamin B5, B12, Beta-glucan (prebiotic) và Sweetone® (chiết xuất quả ngũ vị tử), nước sen Hậu Giang dịu lành giúp bảo vệ hàng rào độ ẩm của làn da nhạy cảm, giảm mẩn đỏ và ngứa do khô ráp, mang lại cho làn da một cảm giác nhẹ nhàng, êm ái như được vỗ về.
+      </p>
+
+      <hr class="divider">
+
+      <div class="tags">
+        <div class="tag"><span class="icon">A</span> Không chứa cồn</div>
+        <div class="tag"><span class="icon">S</span> Không sulfate</div>
+        <div class="tag"><span class="icon">M</span> Không dầu khoáng</div>
+      </div>
+      <div class="tags" style="margin-top:14px;">
+        <div class="tag"><span class="icon">P</span> Không paraben</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="section-label">Thích hợp với</div>
+      <div class="section-value" style="margin-bottom:24px;">Da rất nhạy cảm</div>
+
+      <hr class="divider">
+
+      <div class="section-label">Thành phần chính</div>
+      <div class="section-value">Chiết xuất sen, Madecassoside, B5, B12, Beta-glucan và Sweetone®.</div>
+
+      <div class="cert-row">
+        <div class="cert cruelty">CRUELTY<br>FREE</div>
+        <div class="cert vegan">VEGAN</div>
+        <div class="cert animal">ANIMAL<br>TEST-FREE</div>
+      </div>
+
+      <button class="add-cart">
+        THÊM VÀO GIỎ — 418.000 Đ <span>🛒</span>
+      </button>
+
+      <div class="share-row">
+        <div>
+          Chia sẻ
+          <span class="share-icons">
+            <a href="#">f</a>
+            <a href="#">t</a>
+          </span>
+        </div>
+        <a class="write-review" href="#">Viết đánh giá</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-float">Liên hệ</div>
+
+</body>
+</html>
